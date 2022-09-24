@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PyTest",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "module": "pytest",
+            "args": [
+                "integration_hub_v2/tests/dj_native/integration_hub_v2/test_views/test_library.py"
+            ],
+            "cwd": "${workspaceRoot}",
+            "env": {
+                "USE_SQLITE_DB": "True",
+                "CONSOLE_LOG_LEVEL": "DEBUG"
+            }
+        },
+        {
+            "name": "Django: Debug",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver_plus",
+                "--noreload",
+                "0.0.0.0:4000"
+            ],
+            "django": true,
+            "env": {
+                "USE_SQLITE_DB": "True",
+                "DF_DRY_RUN": "True",
+                "TESTING": "True"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "Django: Test",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "test"
+            ],
+            "django": false,
+            "env": {
+            }
+        },
+        {
+            "name": "Django: Dry Run",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver",
+                "--noreload",
+                "0.0.0.0:8111"
+            ],
+            "django": true,
+            "env": {
+                "USE_SQLITE_DB": "True",
+                "CONSOLE_LOG_LEVEL": "DEBUG",
+                "DF_DRY_RUN": "True"
+            }
+        }
+    ]
+}
